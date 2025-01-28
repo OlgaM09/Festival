@@ -1,67 +1,92 @@
 body {
-    background: #131212;
+    background: #000000;
+    font-family: 'Lepka', sans-serif;
     
   }
+  #confettiCanvas {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure canvas is behind other content */
+  }
+
+  /* Text styling */
   .text {
     color: #D9FF00;
     font-weight: bold;
     font-size: 10vw;
     padding: 1vw;
     margin-top: 10vw;
-    margin-left: 35%;
+    margin-left: 35vw;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    z-index: 2; /* Ensure this text stays above the confetti */
+  }
+
+  .text .top,
+  .text .bottom {
+    display: block;
+  }
+
+  .textleft1 {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2vw;
+    padding: 1vw;
+    margin-top: 3vw;
+    margin-left: 5vw;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 1; /* Ensure text is above confetti */
+  }
+
+  .textleft1 .line {
+    display: block;
+  }
+
+  .textright1 {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2vw;
+    padding: 1vw;
+    margin-top: 3vw;
+    margin-left: 72vw;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 2; /* Ensure text is above confetti */
+  }
+
+  .textright1 .line1 {
+    display: block;
+  }
+
+  .textright1 .line12 {
+    margin-left: 3.5vw;
+    display: block;
+  }
+
+  .textright1 .line13 {
+    margin-left: 12.5vw;
+    display: block;
+  }
+
+  .text2 {
+    color: #E900FF;
+    font-weight: bold;
+    font-size: 10vw;
+    padding: 1vw;
+    margin-top: 20vw;
+    margin-left: 22vw;
     justify-content: center;
     align-items: center;
     position: relative;
     white-space: nowrap;
   }
-
-.text .top,.text .bottom {
-  display: block;
-}
-
-.textleft1 {
-    color: #ffffff;
-    font-weight: bold;
-    font-size:2vw;
-    padding: 1vw;
-    margin-top: 3vw;
-    margin-left: 0%;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    white-space: nowrap;
-    
-  }
-
-.textleft1 .line {
-  display: block;
-}
-
-
-.textright1 {
-    color: #ffffff;
-    font-weight: bold;
-    font-size:2vw;
-    padding: 1vw;
-    margin-top: 3vw;
-    margin-left: 77%;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    white-space: nowrap;
-    
-  }
-
-.textright1 .line1 {
-  display: block;
-}
-.textright1 .line12 {
-    margin-left:22%;
-    display: block;
-  }
-  .textright1 .line13 {
-    margin-left:60%;
-    display: block;
-  }
-
-  

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" dir="ltr">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="utf-8">
@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="./stylesheets/style.css">
-  <script src="./js.js"></script> 
+  <script src="javascripts/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </head>
 <body>
-   
    
   
 
@@ -35,14 +35,125 @@
   </p>
 
 
+  <div id="text2" class="text2"> Поп музыка</div>
 
 
-  <script >
+  <script>
+    // // Trigger confetti on click
+    // document.getElementById('text').addEventListener('click', function () {
+    //   confetti({
+    //     particleCount: 700,
+    //     spread: 90,
+    //     origin: { y: 0.3},
+    //   });
+    // });
 
-    document.getElementById("text").addEventListener("click", function() {
-        alert("I GOT CLICKED");    });
-      
-    </script> 
 
 
-</body>
+  const duration = 15 * 1000,
+  animationEnd = Date.now() + duration,
+  defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+const interval = setInterval(function() {
+  const timeLeft = animationEnd - Date.now();
+
+  if (timeLeft <= 0) {
+    return clearInterval(interval);
+  }
+
+  const particleCount = 50 * (timeLeft / duration);
+
+  // since particles fall down, start a bit higher than random
+  document.getElementById('text').addEventListener('click', function () {
+  confetti(
+    Object.assign({}, defaults, {
+      particleCount,
+      origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+    })
+  );
+  confetti(
+    Object.assign({}, defaults, {
+      particleCount,
+      origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+    })
+  );
+}, 250);});
+  </script>
+
+
+
+
+  <!-- <canvas id="confettiCanvas"></canvas>
+  <script>
+    const canvas = document.getElementById("confettiCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const confetti = [];
+
+    // Function to create confetti particles
+    function createConfettiParticles(x, y) {
+      for (let i = 0; i < 100; i++) {
+        confetti.push({
+          x: x,
+          y: y,
+          size: 5,
+          color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+          velocityX: Math.random() *4 - 1,
+          velocityY: Math.random() *4 - 1,
+        });
+      }
+    }
+
+    // Function to draw and animate confetti
+    function drawConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confetti.forEach((particle, index) => {
+        ctx.fillStyle = particle.color;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Update position
+        particle.x += particle.velocityX;
+        particle.y += particle.velocityY;
+        particle.velocityY -= 0.03  ; // Gravity effect
+
+        // Remove particles that go off-screen
+        if (
+          particle.x < 0 ||
+          particle.x > canvas.width ||
+          particle.y > canvas.height
+        ) {
+          confetti.splice(index, 1);
+        }
+      });
+    }
+
+    // Animation loop
+    function update() {
+      drawConfetti();
+      if (confetti.length > 0) {
+        requestAnimationFrame(update);
+      }
+    }
+
+    // Event listeners for top and bottom classes
+    document.querySelector(".top").addEventListener("click", function (event) {
+      const rect = event.target.getBoundingClientRect();
+      createConfettiParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      update(); // Start animation
+    });
+
+    document.querySelector(".bottom").addEventListener("click", function (event) {
+      const rect = event.target.getBoundingClientRect();
+      createConfettiParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      update(); // Start animation
+    });
+  </script> -->
+  </script>

@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Lepka";
-    src: url("../Lepka/LEPKA.otf") format(opentype);
+    src: url("../Lepka/LEPKA.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
 }
