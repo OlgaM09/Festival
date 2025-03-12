@@ -1,3 +1,27 @@
+/* @font-face {
+    font-family: "Lepka";
+    src: url("../Lepka/LEPKA.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../Roboto/Roboto-Medium.ttf") format("opentype");
+    font-weight: medium;
+    font-style: medium;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../Roboto/Roboto-Regular.ttf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+ */
+
+
+
 @font-face {
     font-family: "Lepka";
     src: url("../Lepka/LEPKA.otf") format("opentype");
@@ -5,3 +29,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Roboto";
+    src: url("../Roboto/Roboto-Medium.ttf") format("truetype"); /* Correct format for .ttf files */
+    font-weight: 500; /* Medium weight is typically 500 */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../Roboto/Roboto-Regular.ttf") format("truetype"); /* Correct format for .ttf files */
+    font-weight: normal; /* Normal weight is typically 400 */
+    font-style: normal;
+}

@@ -1,0 +1,199 @@
+
+@media (max-width:320px) {  
+
+    body {
+        background: #000000;
+        font-family: 'Lepka', sans-serif;
+        overflow-x: hidden; /* Hides horizontal scroll */
+        justify-content: center; /* Center vertically */
+
+      }
+
+    .text {
+        color: #D9FF00;
+        font-weight: bold;
+        font-size: 15vw;
+        flex-direction: column; /* Stack children vertically */
+        justify-content: center; /* Center vertically */
+        align-items: center;
+        position: relative;
+        white-space: nowrap;
+        z-index: 2; /* Ensure this text stays above the confetti */
+      }
+    
+
+
+
+
+    .container1 {
+      display: flex; /* Use flexbox to arrange rectangles horizontally */
+      flex-direction: column; /* Align rectangles in a row */
+      gap: 20vw; /* Add 1vw space between rectangles */
+      margin: 2vw;
+      margin-left: 5vw;
+      margin-top: 10vw;
+      z-index: 2; /* Ensure this text stays above the confetti */
+    
+    }
+    .rectangle {
+      width: 90vw; /* Set width of each rectangle */
+      height: 30vw; /* Set height of each rectangle */
+      z-index: 2; /* Ensure this text stays above the confetti */
+    }
+  
+    .container2 {
+      display: flex; /* Use flexbox to arrange circles horizontally */
+      flex-direction: column; /* Align circles in a row */
+      gap: 28vw; /* Add 2vw space between circles */
+      margin: 2vw;
+      margin-left: 46vw;
+      margin-top: -147vw;
+      z-index: 2; /* Ensure this text stays above the confetti */
+  
+    }
+  
+    .circle {
+      width: 13vw; /* Set width of the circle */
+      height: 13vw; /* Set height of the circle (must be equal to width) */
+      background-color: #000000; /* Red color */
+      border-radius: 50%; /* Make it a circle */
+      z-index:3; /* Bring it above other elements */
+      margin-top: 9vw;
+    
+    }
+    .container3 {
+      position: absolute;
+      width: 6vw; /* Set width of the circle */
+      height: 6vw; /* Set height of the circle (must be equal to width) */
+    
+      display: flex; /* Use flexbox to arrange circles horizontally */
+      flex-direction: column; /* Align circles in a row */
+      gap: 44vw; /* Add 2vw space between circles */
+      margin: 0vw;
+      margin-left: 49.5vw;
+      margin-top: -110vw;
+      z-index: 3; /* Bring it above other elements */
+    }
+  
+    .text3 {
+      color: #FEFF01;
+      font-family: 'Lepka', sans-serif; 
+    
+      font-size: 9vw;
+      font-weight: normal;
+      padding: 1vw;
+      margin-top: 12vw;
+      margin-left: 35vw;
+      display: flex; /* Enable flexbox for centering */
+      flex-direction: column; /* Stack children vertically */
+      align-items: center; /* Center horizontally */
+      position: absolute;
+      white-space: nowrap;
+      text-align: center; /* Center text within each span */
+      z-index: 3; /* Bring it above other elements */
+    }
+    
+  .text4 {
+    color: #fdfdfd;
+    font-family: "Roboto", sans-serif; /* Use the Roboto font */
+    font-size: 3vw;
+    font-weight: normal;
+    padding: 1vw;
+    margin-top: 20vw;
+    margin-left: 30vw;
+    display: flex; /* Enable flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center horizontally */
+    position: absolute;
+    white-space: nowrap;
+    text-align: center; /* Center text within each span */
+    z-index: 3; /* Bring it above other elements */
+  
+  }
+  
+    .scratch-canvas {
+      position: absolute; /* Ensure it overlays correctly */
+      width: 70vw;  /* Explicit size */
+    
+      background-color: transparent;
+      margin-top: 7vw;
+      height: 22vw; /* Explicit size */
+      cursor: grabbing;; /* Ensure it doesn’t have a conflicting background */
+      z-index: 4; /* Bring it above other elements */
+    }
+  
+    #SignUp img
+    {
+      position: absolute;
+      margin-top:-63.5vw;
+      margin-left: 40vw;
+      transform: scale(4.3); /* Scales image by 20% */
+      z-index: 2; /* Bring it above other elements */
+      width:20vw; 
+      height:40vw;
+      }
+    
+      #drawCanvas{ 
+        position: absolute; /* Ensure the custom cursor is positioned correctly */
+        margin-top: -57vw;
+        margin-left: 40VW;
+        background-color:transparent;
+        z-index: 5; /* Bring it above other elements */
+        width: 50vw; /* Adjust these values as needed */
+        height: 26vw;
+      }
+  
+      #speakers img {
+        position: absolute; 
+        width: 13vw;     /* Size each disk relative to viewport width */
+        height: auto;   /* Maintain aspect ratio */
+      }
+      
+      /* Left side disks */
+      #speakers img:nth-child(1) {
+        margin-top: 37VW;  
+        margin-left: -57VW;
+      }
+      #speakers img:nth-child(2) {
+        margin-top: 22VW;  
+        margin-left: -45VW;
+      }
+      #speakers img:nth-child(3) {
+        margin-top: 37VW;  
+        margin-left: -33VW;
+      }
+      
+      /* Right side disks */
+      #speakers img:nth-child(4) {
+        margin-top: 37VW;  
+        margin-left: -12VW;
+      }
+      #speakers img:nth-child(5) {
+        margin-top: 22VW;  
+        margin-left: 0VW;
+      }
+      #speakers img:nth-child(6) {
+        margin-top: 37VW;  
+        margin-left: 10VW;
+      }
+  
+  
+        .desktop-version {
+          display: none;
+        }
+        .mobile-version {
+          display: flex;
+          flex-direction: column;
+          text-align: center; 
+          position: relative;
+          margin-top: -75vw;
+          margin-left: 5vw;
+          gap: 47vw;
+          font-size: 3vw;
+          font-family: "Roboto", sans-serif;
+          color: #fdfdfd;
+          flex-direction: column;
+          z-index: 10; /* Bring it above other elements */
+        }
+    
+  }

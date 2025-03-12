@@ -1,6 +1,8 @@
 body {
     background: #000000;
     font-family: 'Lepka', sans-serif;
+    overflow-x: hidden; /* Hides horizontal scroll */
+
     
   }
   #confettiCanvas {
@@ -9,84 +11,563 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Ensure canvas is behind other content */
+    z-index: -10; /* Ensure it's behind everything */
   }
 
   /* Text styling */
   .text {
     color: #D9FF00;
     font-weight: bold;
-    font-size: 10vw;
+    font-size: 15vw;
     padding: 1vw;
     margin-top: 10vw;
-    margin-left: 35vw;
-    justify-content: center;
+    margin-left: 25vw;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
     align-items: center;
     position: relative;
     white-space: nowrap;
     z-index: 2; /* Ensure this text stays above the confetti */
   }
 
-  .text .top,
+  .text .top{
+    display: block;
+  }
   .text .bottom {
+    margin-left: -3.5vw;
     display: block;
+
   }
 
-  .textleft1 {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 2vw;
+  .text1 {
+    color: #fdfdfd;
+    font-family: "Roboto", sans-serif; /* Use the Roboto font */
+    font-size: 2.5vw;
+    font-weight: 500;
     padding: 1vw;
-    margin-top: 3vw;
-    margin-left: 5vw;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    white-space: nowrap;
-    z-index: 1; /* Ensure text is above confetti */
-  }
-
-  .textleft1 .line {
-    display: block;
-  }
-
-  .textright1 {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 2vw;
-    padding: 1vw;
-    margin-top: 3vw;
-    margin-left: 72vw;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    white-space: nowrap;
-    z-index: 2; /* Ensure text is above confetti */
-  }
-
-  .textright1 .line1 {
-    display: block;
-  }
-
-  .textright1 .line12 {
-    margin-left: 3.5vw;
-    display: block;
-  }
-
-  .textright1 .line13 {
-    margin-left: 12.5vw;
-    display: block;
-  }
-
-  .text2 {
-    color: #E900FF;
-    font-weight: bold;
-    font-size: 10vw;
-    padding: 1vw;
-    margin-top: 20vw;
-    margin-left: 22vw;
-    justify-content: center;
-    align-items: center;
+    margin-top: 5vw;
+    margin-left: 0vw;
+    display: flex; /* Enable flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
     position: relative;
     white-space: nowrap;
+    text-align: center; /* Center text within each span */
+    z-index: 2; /* Ensure this text stays above the confetti */
+}
+
+.text1 .top1,
+.text1 .bottom1 {
+    display: block; /* Ensure each span is a block element */
+    z-index: 2; /* Ensure this text stays above the confetti */
+
+}
+
+.text2 {
+  color: #fdfdfd;
+  font-family: "Roboto", sans-serif; /* Use the Roboto font */
+  font-size: 1.5vw;
+  font-weight: normal;
+  padding: 1vw;
+  margin-top: 3vw;
+  margin-left: 0vw;
+  display: flex; /* Enable flexbox for centering */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  position: relative;
+  white-space: nowrap;
+  text-align: center; /* Center text within each span */
+  z-index: 2; /* Ensure this text stays above the confetti */
+}
+
+.text2 .top2,
+.text2 .bottom2 {
+  display: block; /* Ensure each span is a block element */
+  z-index: 2; /* Ensure this text stays above the confetti */
+
+}
+
+.container1 {
+  display: flex; /* Use flexbox to arrange rectangles horizontally */
+  flex-direction: row; /* Align rectangles in a row */
+  gap: 2vw; /* Add 1vw space between rectangles */
+  margin: 2vw;
+  margin-left: 10vw;
+  margin-top: 10vw;
+  z-index: 2; /* Ensure this text stays above the confetti */
+
+}
+
+.rectangle {
+  
+  width: 25vw; /* Set width of each rectangle */
+  height: 40vw; /* Set height of each rectangle */
+  z-index: 2; /* Ensure this text stays above the confetti */
+}
+
+.yellow {
+  background-color:#FEFF01; 
+}
+
+.purple {
+  background-color: #E900FF; 
+}
+
+.blue {
+  background-color: #5800FF; /* Third rectangle: blue */
+}
+
+.scratch-canvas {
+  position: absolute; /* Ensure it overlays correctly */
+  width: 25vw;  /* Explicit size */
+
+  background-color: transparent;
+  margin-top: 10vw;
+  height: 20vw; /* Explicit size */
+  cursor: grabbing;; /* Ensure it doesn’t have a conflicting background */
+  z-index: 4; /* Bring it above other elements */
+}
+
+.container2 {
+  display: flex; /* Use flexbox to arrange circles horizontally */
+  flex-direction: row; /* Align circles in a row */
+  gap: 14vw; /* Add 2vw space between circles */
+  margin: 2vw;
+  margin-left: 16vw;
+  margin-top: -55vw;
+}
+
+
+.circle {
+  width: 13vw; /* Set width of the circle */
+  height: 13vw; /* Set height of the circle (must be equal to width) */
+  background-color: #000000; /* Red color */
+  border-radius: 50%; /* Make it a circle */
+  z-index:3; /* Bring it above other elements */
+  margin-top: 9vw;
+
+}
+
+
+.container3 {
+  position: absolute;
+  width: 7vw; /* Set width of the circle */
+  height: 7vw; /* Set height of the circle (must be equal to width) */
+
+  display: flex; /* Use flexbox to arrange circles horizontally */
+  flex-direction: row; /* Align circles in a row */
+  gap: 20vw; /* Add 2vw space between circles */
+  margin: 2vw;
+  margin-left: 19vw;
+  margin-top: -11vw;
+  z-index: 3; /* Bring it above other elements */
+
+}
+
+.text3 {
+  color: #FEFF01;
+  font-family: 'Lepka', sans-serif; 
+
+  font-size: 9vw;
+  font-weight: normal;
+  padding: 1vw;
+  margin-top: 17vw;
+  margin-left: 2.5vw;
+  display: flex; /* Enable flexbox for centering */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center horizontally */
+  position: absolute;
+  white-space: nowrap;
+  text-align: center; /* Center text within each span */
+  z-index: 3; /* Bring it above other elements */
+}
+
+
+.text4 {
+  color: #fdfdfd;
+  font-family: "Roboto", sans-serif; /* Use the Roboto font */
+  font-size: 1.5vw;
+  font-weight: normal;
+  padding: 1vw;
+  margin-top: 25vw;
+  margin-left: 4vw;
+  display: flex; /* Enable flexbox for centering */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center horizontally */
+  position: absolute;
+  white-space: nowrap;
+  text-align: center; /* Center text within each span */
+  z-index: 3; /* Bring it above other elements */
+
+}
+
+
+#SignUp img
+{
+  position: relative;
+  margin-top: -1vw;
+  margin-left:39.5vw;
+  transform: scale(1.4); /* Scales image by 20% */
+    z-index: 3; /* Bring it above other elements */
+  width:20vw; 
+  height:30vw;
   }
+
+
+  #drawCanvas{ 
+    position: absolute; /* Ensure the custom cursor is positioned correctly */
+    margin-top: 14VW;
+    margin-left: -19VW;
+    background-color:transparent;
+    z-index: 5; /* Bring it above other elements */
+
+  }
+  canvas {
+    cursor: url(../img/pen3.png) , auto;  
+  }
+
+
+
+  #speakers {
+    display: flex;
+    cursor: pointer;
+    flex-wrap: wrap;
+    gap: 2.0vw; /* Sets both horizontal and vertical gaps to 2vw */
+    max-width: 20vw; /* Optional: limits container width */
+    margin: 0 auto; /* Optional: centers container horizontally */
+    position: absolute;
+    margin-top: -30VW;
+    margin-left: 68VW;   
+    z-index: 5; /* Bring it above other elements */
+
+  }
+  /* Each image takes up half of the available width minus the gap */
+  #speakers img {
+    width: calc((85% - 2vw) / 2);
+    display: block;
+  }
+
+
+
+.text5 {
+  position: relative;
+  display: flex; 
+  font-weight: normal;
+  justify-content: center; 
+  align-items: center; 
+  gap: 12.5vw; 
+  margin-top:1.2vw;
+  z-index: 5; /* Bring it above other elements */
+}
+
+.group {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 0.5vw;
+}
+
+.sub {
+  color: #fdfdfd;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5vw;
+  font-weight: normal;
+  white-space: nowrap;
+  text-align: center; 
+}
+
+.desktop-version {
+  display: block;
+}
+.mobile-version {
+  display: none;
+}
+/*
+<!-- 
+ТРЕТЬЯ ЧАСТЬ  --> */
+
+.money-container {
+  position: relative;
+  width: 100vw;
+  height: 40vw;
+  
+ 
+  color: #fff;
+  overflow: hidden; /* Hide bills that move off-screen */
+  text-align: center;
+}
+
+/* Center the text in the container */
+.text6 {
+  position: absolute;
+  top: 50%;
+  font-weight: normal;
+  font-family: "Lepka", sans-serif;
+
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5VW;
+  line-height: 1.4;
+  margin: 0;
+  z-index: 1; /* So text stays above the background but below the bills */
+}
+
+/* Common styles for the dollar bills */
+.bill {
+  position: absolute;
+  width: 10vw;         /* Adjust as needed */
+  height: auto;        /* Keep aspect ratio */
+  transition: 
+    top 0.6s ease, 
+    left 0.6s ease, 
+    transform 0.6s ease;
+  z-index: 2;          /* Bills on top of text */
+}
+
+/* 1) INITIAL POSITIONS (covering the text) */
+/* All bills initially stacked around the center, overlapping the text */
+.bill1 {
+  top: 45%;
+  left: 45%;
+  transform: translate(-50%, -50%) rotate(5deg);
+}
+.bill2 {
+  top: 53%;
+  left: 52%;
+  transform: translate(-50%, -50%) rotate(-10deg);
+}
+.bill3 {
+  top: 45%;
+  left: 39%;
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+.bill4 {
+  top: 55%;
+  left: 38%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+}
+.bill5 {
+  top: 47%;
+  left: 51%;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.bill6 {
+  top: 50%;
+  left: 62%;
+  transform: translate(-50%, -50%) rotate(10deg);
+}
+.bill7 {
+  top: 57%;
+  left: 45%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+}
+.bill8 {
+  top: 51%;
+  left: 56%;
+  transform: translate(-50%, -50%) rotate(20deg);
+}
+
+.bill9 {
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.bill10 {
+  top: 52%;
+  left: 31%;
+  transform: translate(-50%, -50%) rotate(35deg);
+}
+.bill11 {
+  top: 51%;
+  left: 66%;
+  transform: translate(-50%, -50%) rotate(0DEG);
+}
+.bill12 {
+  top: 47%;
+  left: 60%;
+  transform: translate(-50%, -50%) rotate(30deg);
+}
+.bill13 {
+  top: 46%;
+  left: 65%;
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+.bill14 {
+  top: 46%;
+  left: 69%;
+  transform: translate(-50%, -50%) rotate(30deg);
+}
+
+.bill15 {
+  top: 55%;
+  left: 57%;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+/* 
+   2) SPREAD POSITIONS:
+   We'll put these in a .spread modifier class so that 
+   JavaScript can toggle it on and off.
+*/
+.money-container.spread .bill1 {
+  top: 10%;
+  left: 12%;
+  transform: rotate(-30deg);
+ }
+ 
+.money-container.spread .bill2 {
+  top: 20%;
+  left: 70%;
+  transform: rotate(45deg);
+}
+
+.money-container.spread .bill3 {
+  top: 30%;
+  left: 2%;
+  transform: rotate(-45deg);
+}
+.money-container.spread .bill4 {
+  top: 75%;
+  left: 80%;
+  transform: rotate(25deg);
+}
+.money-container.spread .bill5 {
+  top: 20%;
+  left: 35%;
+  transform: rotate(10deg);
+}
+ 
+.money-container.spread .bill6 {
+  top: 75%;
+  left: 60%;
+  transform: rotate(-40deg);
+}
+
+
+.money-container.spread .bill7 {
+  top: 15%;
+  left: 56%;
+  transform: rotate(-10deg);
+}
+.money-container.spread .bill8 {
+  top: 80%;
+  left: 40%;
+  transform: rotate(35deg);
+}
+
+.money-container.spread .bill9 {
+  top: 85%;
+  left: 25%;
+  transform: rotate(20deg);
+}
+
+.money-container.spread .bill10 {
+  top: 22%;
+  left: 25%;
+  transform: rotate(-25deg);
+}
+.money-container.spread .bill11 {
+  top: 5%;
+  left: 40%;
+  transform: rotate(35deg);
+}
+
+
+.money-container.spread .bill12 {
+  top: 30%;
+  left: 10%;
+  transform: rotate(65deg);
+} 
+
+.money-container.spread .bill13 {
+  top: 50%;
+  left: 75%;
+  transform: rotate(15deg);
+} 
+
+
+.money-container.spread .bill14 {
+  top: 10%;
+  left: 80%;
+  transform: rotate(35deg);
+} 
+
+.money-container.spread .bill15 {
+  top: 70%;
+  left: 10%;
+  transform: rotate(15deg);
+} 
+.cake-scene {
+  position: relative;
+  width: 100vw;
+  height: 60VW;
+}
+.cake {
+  position: absolute;
+  margin-top: -5Vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35vw;  /* Adjust to your liking */
+  height: 50vw;  /* Maintain aspect ratio */
+  z-index: 2;    /* Above the background, below floating items if needed */
+}
+
+/* 4) Floating candles, stars, dots (each as a separate image) */
+/* -- Common styles -- */
+.candle, .star, .dot {
+  position: absolute;
+  z-index: 3; /* Above the cake image */
+}
+
+/* Candles (6 examples) */
+.candle1 {  top: 46%;  left: 80%; width:0.7vw;}
+.candle2 { top: 20%; left: 80%; width:0.7vw;}
+.candle3 { top: 60%; left: 15%; width: 0.7vw;}
+.candle4 { top: 70%; left: 85%; width: 0.7vw;}
+.candle5 { top: 15%; left: 15%; width: 0.7vw;}
+.candle6 { top: 35%; left: 10%; width: 0.7vw;}
+
+/* Stars (5 examples) */
+.star1 { top: 5%; left: 15%; width: 3vw; }
+.star2 { top: 30%; left: 20%; width: 3vw; }
+.star3 { top: 50%; left: 75%; width: 3vw; }
+.star4 { top: 70%; left: 25%; width: 3vw; }
+.star5 { top: 40%; left: 65%; width: 3vw; }
+.star6 { top: 30%; left: 60%; width: 3vw; }
+
+/* Neon Dots (5 examples) */
+.dot1 { top: 12%; left: 60%; width: 2vw; }
+.dot2 { top: 37%; left: 25%; width: 2vw; }
+.dot3 { top: 55%; left:20%; width: 2vw; }
+.dot4 { top: 65%; left: 85%; width: 2vw; }
+.dot5 { top: 70%; left: 75%; width: 2vw; }
+.dot6 { top: 20%; left: 65%; width: 2vw; }
+
+.fireworks {
+  position: absolute;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  z-index:-10; /* Above the cake image */
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: explode 4s ease-out forwards;
+}
+
+@keyframes explode {
+  from {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty));
+  }
+}
