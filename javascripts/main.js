@@ -1,5 +1,5 @@
 
-const duration = 15 * 10,
+const duration = 5 * 10,
   animationEnd = Date.now() + duration,
   defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
