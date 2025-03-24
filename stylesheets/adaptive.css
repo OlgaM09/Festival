@@ -228,4 +228,15 @@ display: none;
   z-index: 5;
     /* Above the cake image */
   }
+
+
+  .textfinal-mobile  {
+  display: flex;
+  margin-left: 0vw;    
+  margin-top: -10vw;   
+  transform: scale(0.8);
+ 
+
+    /* Ensure this text stays above the confetti */
+  }
 }
