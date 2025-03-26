@@ -16,7 +16,7 @@ const interval = setInterval(function () {
 
   const particleCount = 50 * (timeLeft / duration);
 
-  // since particles fall down, start a bit higher than random
+
   document.getElementById('text').addEventListener('click', function () {
     confetti(
       Object.assign({}, defaults, {

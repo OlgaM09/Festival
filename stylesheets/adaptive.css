@@ -4,9 +4,7 @@
     background: #000000;
     font-family: 'Lepka', sans-serif;
     overflow-x: hidden;
-    /* Hides horizontal scroll */
     justify-content: center;
-    /* Center vertically */
 
   }
 
@@ -15,67 +13,50 @@
     font-weight: bold;
     font-size: 15vw;
     flex-direction: column;
-    /* Stack children vertically */
     justify-content: center;
-    /* Center vertically */
     align-items: center;
     position: relative;
     white-space: nowrap;
     z-index: 2;
-    /* Ensure this text stays above the confetti */
+
   }
 
 
   .container1 {
     display: flex;
-    /* Use flexbox to arrange rectangles horizontally */
     flex-direction: column;
-    /* Align rectangles in a row */
     gap: 20vw;
-    /* Add 1vw space between rectangles */
     margin: 2vw;
     margin-left: 0vw;
     margin-top: 10vw;
     z-index: 2;
-    /* Ensure this text stays above the confetti */
 
   }
 
   .rectangle {
     width: 100vw;
-    /* Set width of each rectangle */
     height: 30vw;
-    /* Set height of each rectangle */
     z-index: 2;
-    /* Ensure this text stays above the confetti */
+
   }
 
   .container2 {
     display: flex;
-    /* Use flexbox to arrange circles horizontally */
     flex-direction: column;
-    /* Align circles in a row */
     gap: 28vw;
-    /* Add 2vw space between circles */
     margin: 2vw;
     margin-left: 46vw;
     margin-top: -147vw;
     z-index: 2;
-    /* Ensure this text stays above the confetti */
 
   }
 
   .circle {
     width: 13vw;
-    /* Set width of the circle */
     height: 13vw;
-    /* Set height of the circle (must be equal to width) */
     background-color: #000000;
-    /* Red color */
     border-radius: 50%;
-    /* Make it a circle */
     z-index: 3;
-    /* Bring it above other elements */
     margin-top: 9vw;
 
   }
@@ -83,21 +64,14 @@
   .container3 {
     position: absolute;
     width: 6vw;
-    /* Set width of the circle */
     height: 6vw;
-    /* Set height of the circle (must be equal to width) */
-
     display: flex;
-    /* Use flexbox to arrange circles horizontally */
     flex-direction: column;
-    /* Align circles in a row */
     gap: 44vw;
-    /* Add 2vw space between circles */
     margin: 0vw;
     margin-left: 49.5vw;
     margin-top: -110vw;
     z-index: 3;
-    /* Bring it above other elements */
   }
 
   .text3 {
@@ -110,40 +84,31 @@
     margin-top: 12vw;
     margin-left: 42vw;
     display: flex;
-    /* Enable flexbox for centering */
     flex-direction: column;
-    /* Stack children vertically */
     align-items: center;
-    /* Center horizontally */
     position: absolute;
     white-space: nowrap;
     text-align: center;
-    /* Center text within each span */
     z-index: 3;
-    /* Bring it above other elements */
+
   }
 
   .text4 {
     color: #fdfdfd;
     font-family: "Roboto", sans-serif;
-    /* Use the Roboto font */
     font-size: 3vw;
     font-weight: normal;
     padding: 1vw;
     margin-top: 21vw;
     margin-left: 37vw;
     display: flex;
-    /* Enable flexbox for centering */
     flex-direction: column;
-    /* Stack children vertically */
     align-items: center;
-    /* Center horizontally */
     position: absolute;
     white-space: nowrap;
     text-align: center;
-    /* Center text within each span */
     z-index: 3;
-    /* Bring it above other elements */
+   
 
   }
 
@@ -156,23 +121,21 @@ display: none;
     margin-top: -63.5vw;
     margin-left: 36vw;
     transform: scale(3.1);
-    /* Scales image by 20% */
     z-index: 2;
-    /* Bring it above other elements */
     width: 30vw;
     height: 40vw;
   }
 
   #drawCanvas {
     position: absolute;
-    /* Ensure the custom cursor is positioned correctly */
+   
     margin-top: -57vw;
     margin-left: 40VW;
     background-color: transparent;
     z-index: 5;
-    /* Bring it above other elements */
+ 
     width: 50vw;
-    /* Adjust these values as needed */
+   
     height: 26vw;
   }
 
@@ -210,7 +173,7 @@ display: none;
     color: #fdfdfd;
     flex-direction: column;
     z-index: 10;
-    /* Bring it above other elements */
+    
   }
 
   .cake-scene {
@@ -226,7 +189,7 @@ display: none;
     height: 40vw;
   margin-left: 32vw;    
   z-index: 5;
-    /* Above the cake image */
+   
   }
 
 
@@ -236,7 +199,5 @@ display: none;
   margin-top: -10vw;   
   transform: scale(0.8);
  
-
-    /* Ensure this text stays above the confetti */
   }
 }
