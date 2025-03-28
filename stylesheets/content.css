@@ -21,20 +21,25 @@ body {
     font-size: 15vw;
     padding: 1vw;
     margin-top: 10vw;
-    margin-left: 25vw;
+    margin-left: 22vw;
+    margin-right:20vw;
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
     position: relative;
     white-space: nowrap;
+    cursor: grabbing;
+
     z-index: 2; 
   }
 
   .text .top{
     display: block;
+    margin-left: 4vw;
+
   }
   .text .bottom {
-    margin-left: -3.5vw;
+    margin-left: 0vw;
     display: block;
 
   }
